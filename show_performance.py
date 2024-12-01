@@ -7,11 +7,12 @@ from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_
 import seaborn as sns
 
 # 저장된 x_test와 y_test 불러오기
+# best_global_model2.h5인 경우 x_test2.npy, y_test2.npy
 x_test = np.load('x_test.npy')
 y_test = np.load('y_test.npy')
 
 # 성능 지표 계산
-# 저장된 model 불러오기
+# 저장된 model 불러오기('best_global_model.h5', 'best_global_model2.h5')
 loaded_model = tf.keras.models.load_model('best_global_model.h5')
 
 y_pred = loaded_model.predict(x_test).flatten()  # 예측값을 이진 분류로 변환

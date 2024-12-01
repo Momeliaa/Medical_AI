@@ -10,8 +10,10 @@ import cv2
 
 
 # 저장된 이미지 x_test 불러오기
+# best_global_model2.h5인 경우 x_test2.npy
 x_test = np.load('x_test.npy')
 
+# best_gobal_model2.h5
 model = load_model('best_global_model.h5')
 
 model.summary()
@@ -46,7 +48,7 @@ def make_gradcam_heatmap(img_array, model, last_conv_layer_name, pred_index=None
     return heatmap.numpy()
 
 # 첫 번째 테스트 이미지에 대한 Grad-CAM heatmap 생성
-heatmap = make_gradcam_heatmap(x_test[0:1], model, 'conv2d_56')
+heatmap = make_gradcam_heatmap(x_test[0:1], model, 'conv2d_92')
 
 # 생성된 heatmap 시각화
 plt.matshow(heatmap)

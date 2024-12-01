@@ -46,6 +46,7 @@ def load_images(image_paths):
 
 
 # augmentation 적용할 때 이미지, 라벨 반환
+# ben, mal 원본 data 3번의 랜덤 augmentation 적용
 def load_images_with_labels(image_paths, labels, augmentation_count=3):
     images, augmented_labels = [], []
     for image_path, label in zip(image_paths, labels):

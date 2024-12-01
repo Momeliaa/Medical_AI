@@ -256,7 +256,7 @@ num_rounds = 7  # 연합학습 7번 수행
 best_global_model, global_model_accuracy, global_model_loss, global_model_val_accuracy, global_model_val_loss \
     = federated_learning(num_rounds, num_clients, clients_data, x_test, y_test)
 
-best_global_model.save('best_global_model.h5')
+best_global_model.save('best_global_model2.h5')
 
 # 훈련/검증 정확도 및 손실 그래프 그리기
 plt.figure(figsize=(12, 6))

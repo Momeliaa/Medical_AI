@@ -47,7 +47,7 @@ def load_images(image_paths):
 
 
 # augmentation 적용할 때 이미지, 라벨 반환
-# 하나의 원본 malignant data만 7번의 랜덤 augmentation 적용
+#  malignant data만 6번의 랜덤 augmentation 적용
 def load_images_with_labels(image_paths, labels, augmentation_count=6):
     images, augmented_labels = [], []
     for image_path, label in zip(image_paths, labels):
@@ -126,8 +126,8 @@ y_val = np.concatenate([data['val']['labels'] for data in clients_data.values()]
 x_test = np.concatenate([data['test']['images'].numpy() for data in clients_data.values()], axis=0)
 y_test = np.concatenate([data['test']['labels'] for data in clients_data.values()], axis=0)
 
-np.save('x_test.npy', x_test)
-np.save('y_test.npy', y_test)
+np.save('x_test2.npy', x_test)
+np.save('y_test2.npy', y_test)
 
 # 이미지와 라벨 개수가 같은지 확인
 for location, data in clients_data.items():
